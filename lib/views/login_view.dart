@@ -1,3 +1,4 @@
+import 'package:antarjak/views/dashboard_view.dart';
 import 'package:flutter/material.dart';
 
 class LoginView extends StatelessWidget {
@@ -6,6 +7,7 @@ class LoginView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFDAF5FF),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -15,7 +17,7 @@ class LoginView extends StatelessWidget {
                 CardFormLogin(),
                 Center(
                   child: Image.asset(
-                    'assets/hug.png',
+                    'assets/logo.png',
                     width: 150,
                   ),
                 ),
@@ -39,8 +41,8 @@ class CardFormLogin extends StatelessWidget {
       child: Card(
         elevation: 8,
         margin: EdgeInsets.symmetric(horizontal: 20, vertical: 100),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        color: Color.fromARGB(255, 76, 128, 250),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+        color: Color.fromARGB(255, 87, 196, 255),
         child: Column(
           children: [
             SizedBox(
@@ -67,9 +69,13 @@ class tombolLogin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (bc) {
+            return DashboardView();
+          }));
+        },
         style: ElevatedButton.styleFrom(
-            backgroundColor: Color.fromRGBO(96, 202, 106, 1),
+            backgroundColor: Color.fromRGBO(90, 196, 101, 1),
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20))),
         child: Padding(
@@ -93,6 +99,7 @@ class inputanlah extends StatelessWidget {
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
             fillColor: Color.fromARGB(255, 255, 255, 255),
             contentPadding: EdgeInsets.fromLTRB(10, 5, 10, 5),
+            hintText: "Masukin...",
             isDense: true,
             filled: true),
       ),
