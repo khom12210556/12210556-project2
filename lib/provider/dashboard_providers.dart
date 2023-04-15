@@ -13,6 +13,15 @@ class dashboardProviders with ChangeNotifier {
   }
 }
 
+class BeritaPanelProvider with ChangeNotifier {
+  bool modecari = false;
+
+  void ubahmode() {
+    modecari = !modecari;
+    notifyListeners();
+  }
+}
+
 class BeritaLoadDataProvider with ChangeNotifier {
   List<BeritaModel> data = [];
 

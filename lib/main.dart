@@ -8,6 +8,7 @@ void main(List<String> args) {
   runApp(MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (bc) => dashboardProviders()),
+        ChangeNotifierProvider(create: (bc) => BeritaPanelProvider()),
         ChangeNotifierProvider(create: (bc) => BeritaLoadDataProvider()),
       ],
       builder: (context, Widget) {
