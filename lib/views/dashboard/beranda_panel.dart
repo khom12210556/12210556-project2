@@ -1,63 +1,54 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class DashboardView extends StatelessWidget {
-  const DashboardView({super.key});
+class BerandaPanel extends StatelessWidget {
+  const BerandaPanel({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(items: [
-        BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.house), label: 'beranda'),
-        BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.newspaper), label: 'berita'),
-        BottomNavigationBarItem(
-            icon: Icon(FontAwesomeIcons.gear), label: 'pengaturan'),
-      ]),
-      body: Stack(
-        children: [
-          Image.asset(
-            'assets/background.jpg',
-            width: double.infinity,
-            fit: BoxFit.cover,
+    return Stack(
+      children: [
+        Image.asset(
+          'assets/background.jpg',
+          width: double.infinity,
+          fit: BoxFit.cover,
+        ),
+        profilpengguna(),
+        Padding(
+          padding: const EdgeInsets.only(
+            top: 180,
+            bottom: 0,
           ),
-          profilpengguna(),
-          Padding(
-            padding: const EdgeInsets.only(
-              top: 180,
-              bottom: 0,
-            ),
-            child: Card(
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(30),
-                      topRight: Radius.circular(30))),
-              margin: EdgeInsets.zero,
-              child: Container(
-                width: double.infinity,
-                child: Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        height: 40,
-                      ),
-                      labelBerita(),
-                      listBerita(),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      listMenu()
-                    ],
-                  ),
+          child: Card(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(30),
+                    topRight: Radius.circular(30))),
+            margin: EdgeInsets.zero,
+            child: Container(
+              width: double.infinity,
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: 40,
+                    ),
+                    labelBerita(),
+                    listBerita(),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    listMenu()
+                  ],
                 ),
               ),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

@@ -1,4 +1,4 @@
-import 'package:antarjak/views/dashboard_view.dart';
+import 'package:antarjak/views/dashboard/dashboard_view.dart';
 import 'package:flutter/material.dart';
 
 class LoginView extends StatelessWidget {
